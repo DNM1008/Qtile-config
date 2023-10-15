@@ -34,3 +34,5 @@ Autostart programs and external tray icons (copyq, nm-applet, blueman, picom, pa
 You might want to install xmodmap and/or input-remapper to edit your keyboard mappings.
 
 Special thanks to [DT](https://gitlab.com/dwt1), this config file is just his config file but customised a little bit by me.
+
+You can take a look at the config file for the keybindings
