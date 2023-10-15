@@ -8,13 +8,13 @@ Install the dependencies:
 Debian based:
 
 ```
-sudo apt install lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm konsole
+sudo apt install lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm kitty
 ```
 
 Arch based:
 
 ```
-yay -S lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm konsole
+yay -S lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm kitty
 ```
 
 Clone the repo:
