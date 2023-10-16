@@ -8,13 +8,13 @@ Install the dependencies:
 Debian based:
 
 ```
-sudo apt install lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm kitty
-```
+sudo apt install lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm kitty nitrogen lxappearance qt5ct nerd-fonts
+``` 
 
 Arch based:
 
 ```
-yay -S lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm kitty
+yay -S lxsession picom copyq network-manager-applet pamac-tray-icon-plasma qtile qtile-extras i3lock-color rofi flameshot firefox thunderbird pcmanfm kitty nitrogen lxappearance qt5ct nerd-fonts
 ```
 
 Clone the repo:
@@ -32,6 +32,8 @@ You can edit and the config file at `~/.config/qtile/config.py`.
 Autostart programs and external tray icons (copyq, nm-applet, blueman, picom, pama-tray-icon) is at `~/.config/qtile/autostart.sh`.
 
 You might want to install xmodmap and/or input-remapper to edit your keyboard mappings.
+
+You might have to make the autostart file executable: `sudo chmod +x ~/.config/qtile/autostart.sh`
 
 Special thanks to [DT](https://gitlab.com/dwt1), this config file is just his config file but customised a little bit by me.
 
