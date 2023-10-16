@@ -34,7 +34,7 @@ from qtile_extras.widget.decorations import BorderDecoration
 import colors
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
-myTerm = "konsole"      # My terminal of choice
+myTerm = "kitty"      # My terminal of choice
 myBrowser = "firefox" # My browser of choice
 myFileManager = "pcmanfm" # My file manager
 myMail = "thunderbird" # My Mail
@@ -68,7 +68,8 @@ keys = [
     Key([mod], "e", lazy.spawn(myFileManager), desc='File browser'),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "m", lazy.spawn(myMail), desc = "Mail client"),
-    Key([mod], "d", lazy.spawn("discord"), desc = "Mail client"),
+    Key([mod], "d", lazy.spawn("discord"), desc = "Discord"),
+    Key([mod], "c", lazy.spawn("code"), desc = "Vscode"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "p", lazy.spawn("i3lock -B 10"), desc="Logout menu"),

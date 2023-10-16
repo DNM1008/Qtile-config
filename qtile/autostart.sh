@@ -8,9 +8,9 @@ lxsession &
 picom &
 copyq &
 nm-applet &
-xmodmap ~/.Xmodmap &
 pamac-tray-icon-plasma &
 # cbatticon &
+xss-lock -- i3lock -B 10 &
 "$HOME"/.screenlayout/layout.sh &
 
 ### UNCOMMENT ONLY ONE OF THE FOLLOWING THREE OPTIONS! ###
