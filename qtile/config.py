@@ -61,20 +61,24 @@ def lock_on_sleep():
 # A list of available commands that can be bound to keys can be found
 # at https://docs.qtile.org/en/latest/manual/config/lazy.html
 keys = [
-    # The essentials
+    # Launching programs
     Key([mod], "Return", lazy.spawn(myTerm), desc="Terminal"),
-    Key([mod], "p", lazy.spawn("rofi -show drun"), desc='Run Launcher'),
-    Key([mod], "w", lazy.spawn(myBrowser), desc='Web browser'),
-    Key([mod], "e", lazy.spawn(myFileManager), desc='File browser'),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "m", lazy.spawn(myMail), desc = "Mail client"),
     Key([mod], "d", lazy.spawn("discord"), desc = "Discord"),
     Key([mod], "c", lazy.spawn("code"), desc = "Vscode"),
+    Key([mod], "e", lazy.spawn(myFileManager), desc='File browser'),
+    Key([mod], "m", lazy.spawn(myMail), desc = "Mail client"),
+    Key([mod], "w", lazy.spawn(myBrowser), desc='Web browser'),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot gui --clipboard"), desc="Screenshot region to clipboard"),
+
+    # Rofi and prompts
+    Key([mod], "p", lazy.spawn("rofi -show drun"), desc='Run Launcher'),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod, "shift"], "p", lazy.spawn("rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu "), desc="Logout menu"),
+
+    # Qtile
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "shift"], "p", lazy.spawn("i3lock -B 10"), desc="Logout menu"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "shift"], "s", lazy.spawn("flameshot gui --clipboard"), desc="Screenshot region to clipboard"),
+    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     
     # Volumes
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower Volume by 5%"),
