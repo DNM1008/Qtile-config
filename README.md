@@ -72,6 +72,9 @@ You might want to install xmodmap and/or input-remapper to edit your keyboard ma
 
 You might have to make the autostart file executable: `sudo chmod +x ~/.config/qtile/autostart.sh`
 
+For my other configs, you should check out [this](https://github.com/DNM1008/Other-configs)
+
 Special thanks to [DT](https://gitlab.com/dwt1), this config file is just his config file but customised a little bit by me.
+[His YouTube Channel](https://www.youtube.com/@DistroTube)
 
 You can take a look at the config file for the keybindings
