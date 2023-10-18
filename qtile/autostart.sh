@@ -5,13 +5,14 @@ COLORSCHEME=Catppuccin
 
 ### AUTOSTART PROGRAMS ###
 lxsession &
-picom &
+# picom &
 copyq &
 nm-applet &
 pamac-tray-icon-plasma &
 # birdtray &
 # cbatticon &
-xss-lock -- i3lock -B 10 &
+xss-lock -- i3lock -ei ~/.config/qtile/lockscreen.png &
+# xss-lock -- i3lock -B 10 &
 "$HOME"/.screenlayout/layout.sh &
 
 ### UNCOMMENT ONLY ONE OF THE FOLLOWING THREE OPTIONS! ###

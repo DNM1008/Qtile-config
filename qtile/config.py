@@ -52,11 +52,6 @@ def minimize_all(qtile):
     for win in qtile.current_group.windows:
         if hasattr(win, "toggle_minimize"):
             win.toggle_minimize()
-# Lock on sleep
-@hook.subscribe.suspend
-def lock_on_sleep():
-    #run screen locker
-    qtile.spawn("i3lock -B 10")
 
 # A list of available commands that can be bound to keys can be found
 # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -221,7 +216,7 @@ colors = colors.Catppuccin
 # Some settings that I use on almost every layout, which saves us
 # from having to type these out for each individual layout.
 layout_theme = {"border_width": 2,
-                "margin": 8,
+                "margin": 6,
                 "border_focus": colors[8],
                 "border_normal": colors[0]
                 }
@@ -279,16 +274,30 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-        widget.Image(
-                 filename = "~/.config/qtile/icons/python.png",
-                 scale = "False",
+        # widget.Image(
+        #          filename = "~/.config/qtile/icons/arch.png",
+        #          scale = "False",
+        #          mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
+        #          ),
+        widget.GenPollText(
+                 update_interval = 300,
+                 func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+                 foreground = colors[8],
+                 fmt = '󰣇  {}',
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[8],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
                  ),
         widget.Prompt(
                  font = "Ubuntu Mono",
                  fontsize=14,
                  foreground = colors[1]
         ),
+        widget.Spacer(length = 8),
         widget.GroupBox(
                  fontsize = 11,
                  margin_y = 3,
@@ -306,6 +315,7 @@ def init_widgets_list():
                  other_current_screen_border = colors[7],
                  other_screen_border = colors[4],
                  ),
+        widget.Spacer(length = 8),
         widget.TextBox(
                  text = '|',
                  font = "Ubuntu Mono",
@@ -313,8 +323,9 @@ def init_widgets_list():
                  padding = 2,
                  fontsize = 14
                  ),
+        widget.Spacer(length = 8),
         widget.CurrentLayoutIcon(
-                 # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                 custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
                  foreground = colors[1],
                  padding = 0,
                  scale = 0.7
@@ -323,6 +334,7 @@ def init_widgets_list():
        #          foreground = colors[1],
        #          padding = 5
        #          ),
+        widget.Spacer(length = 8),
         widget.TextBox(
                  text = '|',
                  font = "Ubuntu Mono",
@@ -330,8 +342,9 @@ def init_widgets_list():
                  padding = 2,
                  fontsize = 14
                  ),
+        widget.Spacer(length = 8),
         widget.WindowName(
-                 foreground = colors[6],
+                 foreground = colors[7],
                  max_chars = 40
                  ),
     #     widget.GenPollText(
@@ -418,11 +431,11 @@ def init_widgets_list():
 #                 ),
         widget.Spacer(length = 8),
         widget.Volume(
-                 foreground = colors[7],
+                 foreground = colors[3],
                  fmt = '🕫 {}',
                  decorations=[
                      BorderDecoration(
-                         colour = colors[7],
+                         colour = colors[3],
                          border_width = [0, 0, 2, 0],
                      )
                  ],
@@ -439,11 +452,11 @@ def init_widgets_list():
 #                 ],
 #                 ),
         widget.Clock(
-                 foreground = colors[8],
+                 foreground = colors[1],
                  format = "⏱  %a, %b %d - %H:%M",
                  decorations=[
                      BorderDecoration(
-                         colour = colors[8],
+                         colour = colors[1],
                          border_width = [0, 0, 2, 0],
                      )
                  ],
