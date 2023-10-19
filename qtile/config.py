@@ -271,7 +271,6 @@ widget_defaults = dict(
 
 extension_defaults = widget_defaults.copy()
 
-
 def init_widgets_list():
     widgets_list = [
         # widget.Image(
@@ -279,25 +278,33 @@ def init_widgets_list():
         #          scale = "False",
         #          mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
         #          ),
-        widget.GenPollText(
-                 update_interval = 300,
-                 func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
-                 foreground = colors[8],
-                 fmt = '󰣇  {}',
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[8],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
+#         widget.GenPollText(
+#                  update_interval = 300,
+#                  func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+#                  foreground = colors[8],
+#                  fmt = '󰣇  {}',
+#                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
+#                  decorations=[
+#                      BorderDecoration(
+#                          colour = colors[8],
+#                          border_width = [0, 0, 2, 0],
+#                      )
+#                  ],
+#                  ),
+        widget.Spacer(length = 8),
+        widget.TextBox(
+                 text = '󰣇',
+                 font = "Ubuntu Mono",
+                 foreground = colors[9],
+                 padding = 2,
+                 fontsize = 14
                  ),
+        widget.Spacer(length = 8),
         widget.Prompt(
                  font = "Ubuntu Mono",
                  fontsize=14,
                  foreground = colors[1]
         ),
-        widget.Spacer(length = 8),
         widget.GroupBox(
                  fontsize = 11,
                  margin_y = 3,
@@ -308,7 +315,7 @@ def init_widgets_list():
                  active = colors[8],
                  inactive = colors[1],
                  rounded = False,
-                 highlight_color = colors[2],
+                 highlight_color = colors[3],
                  highlight_method = "line",
                  this_current_screen_border = colors[7],
                  this_screen_border = colors [4],
@@ -344,7 +351,7 @@ def init_widgets_list():
                  ),
         widget.Spacer(length = 8),
         widget.WindowName(
-                 foreground = colors[7],
+                 foreground = colors[1],
                  max_chars = 40
                  ),
     #     widget.GenPollText(
@@ -413,29 +420,30 @@ def init_widgets_list():
                 ],
                 update_interval = 30,
                 ),
-#        widget.DF(
-#                 update_interval = 60,
-#                 foreground = colors[5],
-#                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
-#                 partition = '/',
-#                 #format = '[{p}] {uf}{m} ({r:.0f}%)',
-#                 format = '{uf}{m} free',
-#                 fmt = '🖴  Disk: {}',
-#                 visible_on_warn = False,
-#                 decorations=[
-#                     BorderDecoration(
-#                         colour = colors[5],
-#                         border_width = [0, 0, 2, 0],
-#                     )
-#                 ],
-#                 ),
+        widget.Spacer(length = 8),
+        widget.DF(
+                 update_interval = 60,
+                 foreground = colors[1],
+                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+                 partition = '/',
+                 #format = '[{p}] {uf}{m} ({r:.0f}%)',
+                 format = '{uf}/{s}{m}',
+                 fmt = '🖴  {}',
+                 visible_on_warn = False,
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[1],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
         widget.Spacer(length = 8),
         widget.Volume(
-                 foreground = colors[3],
+                 foreground = colors[4],
                  fmt = '🕫 {}',
                  decorations=[
                      BorderDecoration(
-                         colour = colors[3],
+                         colour = colors[4],
                          border_width = [0, 0, 2, 0],
                      )
                  ],
@@ -452,11 +460,11 @@ def init_widgets_list():
 #                 ],
 #                 ),
         widget.Clock(
-                 foreground = colors[1],
+                 foreground = colors[9],
                  format = "⏱  %a, %b %d - %H:%M",
                  decorations=[
                      BorderDecoration(
-                         colour = colors[1],
+                         colour = colors[9],
                          border_width = [0, 0, 2, 0],
                      )
                  ],
@@ -467,7 +475,7 @@ def init_widgets_list():
                 icon_size = 16, 
                 decorations=[
                     BorderDecoration(
-                        colour = colors[6],
+                        colour = "#ffffff",
                         border_width = [0, 0, 2, 0],
                     )
                 ],
