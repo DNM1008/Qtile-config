@@ -295,7 +295,7 @@ def init_widgets_list():
         widget.TextBox(
                  text = '󰣇',
                  font = "Ubuntu Mono",
-                 foreground = colors[9],
+                 foreground = colors[7],
                  padding = 2,
                  fontsize = 14
                  ),
@@ -401,6 +401,64 @@ def init_widgets_list():
                  ],
                  ),
         widget.Spacer(length = 8),
+       #  widget.Battery(
+       #          # chars
+       #          charge_char = "󰢞",
+       #          discharge_char = "󰁾",
+       #          empty_char = "󰂃",
+       #          full_char = "󰁹",
+       #          unknown_char = "󰚥",
+       #          foreground = colors[5],
+       #          low_foreground = colors[3],
+       #          format = "{char}  {percent:2.0%} {hour:d}:{min:02d}",
+       #          notify_below = 5,
+       #          decorations=[
+       #              BorderDecoration(
+       #                  colour = colors[5],
+       #                  border_width = [0, 0, 2, 0],
+       #              )                    
+       #          ],
+       #          update_interval = 30,
+       #          ),
+       #  widget.Spacer(length = 8),
+        widget.DF(
+                 update_interval = 60,
+                 foreground = colors[1],
+                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+                 partition = '/',
+                 #format = '[{p}] {uf}{m} ({r:.0f}%)',
+                 format = '{uf}/{s}{m}',
+                 fmt = '🖴  {}',
+                 visible_on_warn = False,
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[1],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
+        widget.Spacer(length = 8),
+        widget.Volume(
+                 foreground = colors[7],
+                 fmt = '🕫 {}',
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[7],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
+        widget.Spacer(length = 8),
+#        widget.KeyboardLayout(
+#                 foreground = colors[4],
+#                 fmt = '⌨  Kbd: {}',
+#                 decorations=[
+#                     BorderDecoration(
+#                         colour = colors[4],
+#                         border_width = [0, 0, 2, 0],
+#                     )
+#                 ],
+#                 ),
         widget.Battery(
                 # chars
                 charge_char = "󰢞",
@@ -421,44 +479,6 @@ def init_widgets_list():
                 update_interval = 30,
                 ),
         widget.Spacer(length = 8),
-        widget.DF(
-                 update_interval = 60,
-                 foreground = colors[1],
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
-                 partition = '/',
-                 #format = '[{p}] {uf}{m} ({r:.0f}%)',
-                 format = '{uf}/{s}{m}',
-                 fmt = '🖴  {}',
-                 visible_on_warn = False,
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[1],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-                 ),
-        widget.Spacer(length = 8),
-        widget.Volume(
-                 foreground = colors[4],
-                 fmt = '🕫 {}',
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[4],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-                 ),
-        widget.Spacer(length = 8),
-#        widget.KeyboardLayout(
-#                 foreground = colors[4],
-#                 fmt = '⌨  Kbd: {}',
-#                 decorations=[
-#                     BorderDecoration(
-#                         colour = colors[4],
-#                         border_width = [0, 0, 2, 0],
-#                     )
-#                 ],
-#                 ),
         widget.Clock(
                  foreground = colors[9],
                  format = "⏱  %a, %b %d - %H:%M",
@@ -469,6 +489,20 @@ def init_widgets_list():
                      )
                  ],
                  ),
+        widget.Spacer(length = 8),
+	widget.CheckUpdates(
+		distro = 'Arch_yay',
+		colour_no_updates = colors[5],
+		colour_have_updates = colors[4],
+		display_format = '󰚰:{updates}',
+		no_update_string = ' ',
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[5],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+		),
         widget.Spacer(length = 8),
         widget.Systray(
                 padding = 3,

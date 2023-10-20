@@ -10,9 +10,9 @@ Catppuccin = [
     ["#ed8796","#ed8796"],
     ["#a6da95","#a6da95"],
     ["#f5a97f","#f5a97f"],
-    ["#9aadf4","#9aadf4"],
-    ["#c6a0f6","#c6a0f6"],
     ["#8aadf4","#8aadf4"],
+    ["#c6a0f6","#c6a0f6"],
+    ["#8bd5ca","#8bd5ca"],
     ]
 
 DoomOne = [

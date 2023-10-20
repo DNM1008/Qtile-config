@@ -8,10 +8,10 @@ lxsession &
 # picom &
 copyq &
 nm-applet &
-pamac-tray-icon-plasma &
+# pamac-tray-icon-plasma &
 # birdtray &
 # cbatticon &
-xss-lock -- i3lock -B 10 &
+xss-lock -- i3lock -eB 10 &
 # xss-lock -- i3lock -B 10 &
 "$HOME"/.screenlayout/layout.sh &
 
