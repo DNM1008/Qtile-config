@@ -38,7 +38,7 @@ myTerm = "kitty"      # My terminal of choice
 myBrowser = "firefox" # My browser of choice
 myFileManager = "pcmanfm" # My file manager
 myMail = "thunderbird" # My Mail
-
+screenshot = "maim -s | xclip -selection clipboard -t image/png"
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
@@ -62,8 +62,9 @@ keys = [
     Key([mod], "c", lazy.spawn("code"), desc = "Vscode"),
     Key([mod], "e", lazy.spawn(myFileManager), desc='File browser'),
     Key([mod], "m", lazy.spawn(myMail), desc = "Mail client"),
+    Key([mod], "v", lazy.spawn('copyq toggle'), desc = "Clipboard"),
     Key([mod], "w", lazy.spawn(myBrowser), desc='Web browser'),
-    Key([mod, "shift"], "s", lazy.spawn("flameshot gui --clipboard"), desc="Screenshot region to clipboard"),
+    Key([mod, "shift"], "s", lazy.spawn(screenshot, shell=True), desc="Screenshot region to clipboard"),
 
     # Rofi and prompts
     Key([mod], "p", lazy.spawn("rofi -show drun"), desc='Run Launcher'),
@@ -80,7 +81,6 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+"), desc="Raise Volume by 5%"),
     Key([], "XF86AudioMute", lazy.spawn("amixer sset Master 1+ toggle"), desc="Mute/Unmute Volume"),
     Key([], "XF86AudioMicMute", lazy.spawn("amixer set Capture toggle"), desc="Mute/Unmute Volume"),
-
     # Switch between windows
     # Some layouts like 'monadtall' only need to use j/k to move
     # through the stack, but other layouts like 'columns' will
@@ -296,6 +296,7 @@ def init_widgets_list():
                  text = '󰣇',
                  font = "Ubuntu Mono",
                  foreground = colors[7],
+		mouse_callbacks = {'Button1': lazy.spawn('dunstify "$(fortune)"', shell=True)}, 
                  padding = 2,
                  fontsize = 14
                  ),
