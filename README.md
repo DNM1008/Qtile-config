@@ -15,7 +15,7 @@ makepkg -si
   * Debian based:
 
     ```
-    sudo apt install lxsession picom copyq network-manager-applet qtile i3lock-color rofi kitty nitrogen lxappearance qt5ct nerd-fonts xss-lock maim xclip
+    sudo apt install lxsession picom copyq network-manager-applet qtile i3lock-color rofi kitty nitrogen lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper
     ```
 
     * Install [qtile-extras](https://github.com/elParaguayo/qtile-extras)
@@ -23,7 +23,7 @@ makepkg -si
   * Arch based:
 
     ```
-    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi kitty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock maim xclip
+    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi kitty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper
     ```
   * [Rofi power menu](https://github.com/jluttine/rofi-power-menu)
 
