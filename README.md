@@ -61,7 +61,7 @@ By defaults:
 * Super + Shift + P launches Rofi Power Menu
 * Super + Minus shrinks the window horizontally
 * Super + Equal expands the window horizontally
-* Super + H/J/K/L moves the focus onto window of relative position
+* Super + H/J/K/L moves the focus onto window of relative positions
 * Super + Shift + H/J/K/L moves the focused window in the stack or between the columns
 * Super + Tab cycles between layouts
 * There are other keybindings for layouts that I don't use (yet) but decided to leave them as is if you can make use of them
