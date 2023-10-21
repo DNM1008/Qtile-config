@@ -497,6 +497,7 @@ def init_widgets_list():
 		colour_have_updates = colors[4],
 		display_format = '󰚰:{updates}',
 		no_update_string = ' ',
+		update_interval = 86400,
                  decorations=[
                      BorderDecoration(
                          colour = colors[5],
