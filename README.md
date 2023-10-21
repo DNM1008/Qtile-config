@@ -11,19 +11,12 @@ makepkg -si
 ```
 
 * Install the dependencies:
-
-  * Debian based:
-
-    ```
-    sudo apt install lxsession picom copyq network-manager-applet qtile i3lock-color rofi kitty nitrogen lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper
-    ```
-
-    * Install [qtile-extras](https://github.com/elParaguayo/qtile-extras)
+ * Debbian based: Take a look at the programs in the list of programs for Arch, I you will need to install them, there might be hoops to jump through that I don't know how, particularly `qtile-extras`
   
   * Arch based:
 
     ```
-    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi kitty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper
+    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi alacritty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper
     ```
   * [Rofi power menu](https://github.com/jluttine/rofi-power-menu)
 
@@ -43,12 +36,11 @@ You can edit and the config file at `~/.config/qtile/config.py`.
 Autostart programs and external tray icons (copyq, nm-applet, blueman, picom, pamac-tray-icon) are at `~/.config/qtile/autostart.sh`.
 
 By defaults:
-* Super + C launches VSCode if installed 
-* Super + D launches Discord if installed
+* Super + D launches Discord
 * Super + E launches PCManFM
-* Super + Enter launches Kitty if installed
+* Super + Enter launches Alacritty
 * Super + F toggles fullscreen
-* Super + M launches Thunderbird if installed
+* Super + M launches Thunderbird
 * Super + P launches Rofi
 * Super + Q closes the focused window
 * Super + R launches a run prompt, but I only use it when other keybinds don't work
