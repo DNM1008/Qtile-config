@@ -16,7 +16,7 @@ makepkg -si
   * Arch based:
 
     ```
-    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi alacritty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper
+    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi alacritty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper fortune-mod
     ```
   * [Rofi power menu](https://github.com/jluttine/rofi-power-menu)
 
@@ -58,6 +58,8 @@ By defaults, provided that these applications are installed:
 * Super + Shift + H/J/K/L moves the focused window in the stack or between the columns
 * Super + Tab cycles between layouts
 * There are other keybindings for layouts that I don't use (yet) but decided to leave them as is if you can make use of them
+
+For funsies, you can click on the arch glyph on the top left (the first widget on the bar) and you should have a dunst notification that quotes a quote from fortune
 
 The programs listed are the ones I use and recommends, but if you don't want to use them, simply install the ones you like and change the config file, though you might want to install kitty first, just so it's easier to change the config.
   
