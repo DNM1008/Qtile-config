@@ -356,6 +356,7 @@ def init_widgets_list():
                  foreground = colors[1],
                  max_chars = 40
                  ),
+        widget.Spacer(length = 8),
     #     widget.GenPollText(
     #              update_interval = 300,
     #              func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
@@ -378,6 +379,17 @@ def init_widgets_list():
 #                    )
 #                ],    
 #                ),
+        widget.OpenWeather(
+		location= "Sydney",
+		format = "{main_temp} {units_temperature}: {icon}",	
+		foreground = colors[1],
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[1],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
         widget.Spacer(length = 8),
         widget.CPU(
                 format = '󰘚  {load_percent}%',
