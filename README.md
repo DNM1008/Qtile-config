@@ -35,12 +35,12 @@ cp -r qtile ~/.config/
 You can edit and the config file at `~/.config/qtile/config.py`.
 Autostart programs and external tray icons (copyq, nm-applet, blueman, picom, pamac-tray-icon) are at `~/.config/qtile/autostart.sh`.
 
-By defaults:
+By defaults, provided that these applications are installed:
 * Super + D launches Discord
 * Super + E launches PCManFM
 * Super + Enter launches Alacritty
 * Super + F toggles fullscreen
-* Super + M launches Thunderbird
+* Super + M launches Mailspring
 * Super + P launches Rofi
 * Super + Q closes the focused window
 * Super + R launches a run prompt, but I only use it when other keybinds don't work
