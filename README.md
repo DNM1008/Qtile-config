@@ -50,6 +50,7 @@ By defaults:
 * Super + V toggles CopyQ main window
 * Super + W launches Firefox if installed
 * Super + Shift + S set up screenshot region, I set the default to just copy the screenshot to the clipboard instead of to a file
+  * Alt + Shift + S takes a screenshot of the whole desktop and save it to ~/.cache/screenshot.png because the main screenshot short is wonky when taking the region the size of the screen 
 * Super + Shift + P launches Rofi Power Menu
 * Super + Minus shrinks the window horizontally
 * Super + Equal expands the window horizontally
