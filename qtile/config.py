@@ -38,7 +38,8 @@ myTerm = "alacritty"      # My terminal of choice
 myBrowser = "firefox" # My browser of choice
 myFileManager = "pcmanfm" # My file manager
 myMail = "thunderbird" # My Mail
-screenshot = "maim -s | xclip -selection clipboard -t image/png"
+screenshot = "maim --hidecursor -s | xclip -selection clipboard -t image/png"
+screengrab = "maim --hidecursor ~/.cache/screenshot.png"
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
@@ -59,12 +60,12 @@ keys = [
     # Launching programs
     Key([mod], "Return", lazy.spawn(myTerm), desc="Terminal"),
     Key([mod], "d", lazy.spawn("discord"), desc = "Discord"),
-    Key([mod], "c", lazy.spawn("code"), desc = "Vscode"),
     Key([mod], "e", lazy.spawn(myFileManager), desc='File browser'),
     Key([mod], "m", lazy.spawn(myMail), desc = "Mail client"),
     Key([mod], "v", lazy.spawn('copyq toggle'), desc = "Clipboard"),
     Key([mod], "w", lazy.spawn(myBrowser), desc='Web browser'),
     Key([mod, "shift"], "s", lazy.spawn(screenshot, shell=True), desc="Screenshot region to clipboard"),
+    Key(["mod1", "shift"], "s", lazy.spawn(screengrab, shell=True), desc="Screenshot screen to ~/.cache/screenshot.png"),
 
     # Rofi and prompts
     Key([mod], "p", lazy.spawn("rofi -show drun"), desc='Run Launcher'),
@@ -491,21 +492,21 @@ def init_widgets_list():
                  ],
                  ),
         widget.Spacer(length = 8),
-	widget.CheckUpdates(
-		distro = 'Arch_yay',
-		colour_no_updates = colors[5],
-		colour_have_updates = colors[4],
-		display_format = ' 󰚰 :{updates}',
-		no_update_string = '  ',
-		update_interval = 86400,
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[5],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-		),
-        widget.Spacer(length = 8),
+#	widget.CheckUpdates(
+#		distro = 'Arch_yay',
+#		colour_no_updates = colors[5],
+#		colour_have_updates = colors[4],
+#		display_format = ' 󰚰 :{updates}',
+#		no_update_string = '  ',
+#		update_interval = 86400,
+#                 decorations=[
+#                     BorderDecoration(
+#                         colour = colors[5],
+#                         border_width = [0, 0, 2, 0],
+#                     )
+#                 ],
+#		),
+#        widget.Spacer(length = 8),
         widget.Systray(
                 padding = 3,
                 icon_size = 16, 

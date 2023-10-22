@@ -13,8 +13,7 @@ nm-applet &
 # cbatticon &
 xss-lock -- i3lock -eB 10 &
 # xss-lock -- i3lock -B 10 &
-"$HOME"/.screenlayout/layout.sh &
-
+xrdb -load ~/.config/xresources
 ### UNCOMMENT ONLY ONE OF THE FOLLOWING THREE OPTIONS! ###
 # 1. Uncomment to restore last saved wallpaper
 xwallpaper --stretch ~/.cache/wall &
