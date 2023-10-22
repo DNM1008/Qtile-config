@@ -37,7 +37,7 @@ mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
 myBrowser = "firefox" # My browser of choice
 myFileManager = "pcmanfm" # My file manager
-myMail = "thunderbird" # My Mail
+myMail = "mailspring" # My Mail
 screenshot = "maim --hidecursor -s | xclip -selection clipboard -t image/png"
 screengrab = "maim --hidecursor ~/.cache/screenshot.png"
 
