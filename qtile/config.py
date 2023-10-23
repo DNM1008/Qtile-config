@@ -1,4 +1,4 @@
-l# Copyright (c) 2012 Randall Ma
+# Copyright (c) 2012 Randall Ma
 # Copyright (c) 2012-2014 Tycho Andersen
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
@@ -76,6 +76,7 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "Caps_Lock", lazy.hide_show_bar(), desc="Toggle between layouts"),
     
     # Volumes
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower Volume by 5%"),
@@ -381,8 +382,9 @@ def init_widgets_list():
 #                ),
         widget.OpenWeather(
 		location= "Sydney",
-		app_key="yourappkey",
-		format = "{main_temp}{units_temperature}: {icon}",	
+		app_key="4d251138ceb3b7db73e25e832da303a4",
+		format = "{main_temp: .1f}{units_temperature}: {icon}",	
+		fmt="{}",
 		foreground = colors[1],
                  decorations=[
                      BorderDecoration(
@@ -496,7 +498,7 @@ def init_widgets_list():
         widget.Spacer(length = 8),
         widget.Clock(
                  foreground = colors[9],
-                 format = "⏱  %a, %b %d - %H:%M",
+                 format = "  %a, %b %d - %H:%M",
                  decorations=[
                      BorderDecoration(
                          colour = colors[9],
