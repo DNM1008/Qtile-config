@@ -1,4 +1,4 @@
-# Copyright (c) 2012 Randall Ma
+l# Copyright (c) 2012 Randall Ma
 # Copyright (c) 2012-2014 Tycho Andersen
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
@@ -381,7 +381,8 @@ def init_widgets_list():
 #                ),
         widget.OpenWeather(
 		location= "Sydney",
-		format = "{main_temp} {units_temperature}: {icon}",	
+		app_key="yourappkey",
+		format = "{main_temp}{units_temperature}: {icon}",	
 		foreground = colors[1],
                  decorations=[
                      BorderDecoration(
