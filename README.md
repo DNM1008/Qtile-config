@@ -61,7 +61,7 @@ By defaults, provided that these applications are installed:
 * Super + Tab cycles between layouts
 * There are other keybindings for layouts that I don't use (yet) but decided to leave them as is if you can make use of them
 
-**Note**: To use the weather widget to its fullest, look to create your own api key and add it in the config file, which already has a line for you to do it, simply replace the placeholder text with your own key and uncomment the line (of course reload Qtile).
+**Note**: To use the weather widget to its fullest, look to create your own api key and add it in the config file, which already has a line for you to do it: `# app_key="placeholder",`, simply replace the "placeholder" text with your own key and uncomment the line (of course reload Qtile).
 
 For funsies, you can click on the arch glyph on the top left (the first widget on the bar) and you should have a dunst notification that quotes a quote from fortune
 
