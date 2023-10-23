@@ -36,6 +36,7 @@ You can edit and the config file at `~/.config/qtile/config.py`.
 Autostart programs and external tray icons (copyq, nm-applet, blueman, picom, pamac-tray-icon) are at `~/.config/qtile/autostart.sh`.
 
 By defaults, provided that these applications are installed:
+* Super + Caps Lock toggles the bar
 * Super + D launches Discord
 * Super + E launches PCManFM
 * Super + Enter launches Alacritty
@@ -56,8 +57,11 @@ By defaults, provided that these applications are installed:
 * Super + Equal expands the window horizontally
 * Super + H/J/K/L moves the focus onto window of relative positions
 * Super + Shift + H/J/K/L moves the focused window in the stack or between the columns
+* Super + Shift + R reloads Qtile configs (do this to apply changes that you made in the config file instead of rebooting/logging out)
 * Super + Tab cycles between layouts
 * There are other keybindings for layouts that I don't use (yet) but decided to leave them as is if you can make use of them
+
+**Note**: To use the weather widget to its fullest, look to create your own api key and add it in the config file, which already has a line for you to do it, simply replace the placeholder text with your own key and uncomment the line (of course reload Qtile).
 
 For funsies, you can click on the arch glyph on the top left (the first widget on the bar) and you should have a dunst notification that quotes a quote from fortune
 
