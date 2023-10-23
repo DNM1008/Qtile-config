@@ -382,7 +382,7 @@ def init_widgets_list():
 #                ),
         widget.OpenWeather(
 		location= "Sydney",
-		app_key="4d251138ceb3b7db73e25e832da303a4",
+		# app_key="your api key",
 		format = "{main_temp: .1f}{units_temperature}: {icon}",	
 		fmt="{}",
 		foreground = colors[1],
