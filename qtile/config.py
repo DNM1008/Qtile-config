@@ -325,7 +325,7 @@ def init_widgets_list():
                  other_current_screen_border = colors[7],
                  other_screen_border = colors[4],
                  ),
-        widget.Spacer(length = 8),
+#        widget.Spacer(length = 8),
         widget.TextBox(
                  text = '|',
                  font = "Ubuntu Mono",
@@ -333,7 +333,6 @@ def init_widgets_list():
                  padding = 2,
                  fontsize = 14
                  ),
-        widget.Spacer(length = 8),
         widget.CurrentLayoutIcon(
                  custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
                  foreground = colors[1],
@@ -344,7 +343,6 @@ def init_widgets_list():
        #          foreground = colors[1],
        #          padding = 5
        #          ),
-        widget.Spacer(length = 8),
         widget.TextBox(
                  text = '|',
                  font = "Ubuntu Mono",
@@ -382,7 +380,28 @@ def init_widgets_list():
 #                ),
         widget.OpenWeather(
 		location= "Sydney",
-		# app_key="placeholder",
+		weather_symbols = {
+		        "Unknown": "",
+		        "01d": "☀️",
+		        "01n": "🌕",
+		        "02d": "🌤️",
+		        "02n": "☁️",
+		        "03d": "🌥️",
+		        "03n": "☁️",
+		        "04d": "☁️",
+		        "04n": "☁️",
+		        "09d": "🌧️",
+		        "09n": "🌧️",
+		        "10d": "⛈",
+		        "10n": "⛈",
+		        "11d": "🌩",
+		        "11n": "🌩",
+		        "13d": "❄️",
+		        "13n": "❄️",
+		        "50d": "🌫",
+		        "50n": "🌫",
+		    },
+		app_key="4d251138ceb3b7db73e25e832da303a4",
 		format = "{main_temp: .1f}{units_temperature}: {icon}",	
 		fmt="{}",
 		foreground = colors[1],
@@ -545,24 +564,24 @@ def init_widgets_screen1():
     return widgets_screen1 
 
 # All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
-def init_widgets_screen2():
-    widgets_screen2 = init_widgets_list()
-    del widgets_screen2[22:24]
-    return widgets_screen2
+#def init_widgets_screen2():
+#    widgets_screen2 = init_widgets_list()
+#    del widgets_screen2[22:24]
+#    return widgets_screen2
 
 # For adding transparency to your bar, add (background="#00000000") to the "Screen" line(s)
 # For ex: Screen(top=bar.Bar(widgets=init_widgets_screen2(), background="#00000000", size=24)),
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20))]
+#            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20)),
+#            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20))]
 
 if __name__ in ["config", "__main__"]:
     screens = init_screens()
     widgets_list = init_widgets_list()
     widgets_screen1 = init_widgets_screen1()
-    widgets_screen2 = init_widgets_screen2()
+    #widgets_screen2 = init_widgets_screen2()
 
 # Drag floating layouts.
 mouse = [
@@ -629,4 +648,4 @@ def start_once():
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile"

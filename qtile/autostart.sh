@@ -5,10 +5,10 @@ COLORSCHEME=Catppuccin
 
 ### AUTOSTART PROGRAMS ###
 lxsession &
-picom &
 copyq &
 nm-applet &
 # pamac-tray-icon-plasma &
+# picom &
 # birdtray &
 # cbatticon &
 xss-lock -- i3lock -eB 10 &
