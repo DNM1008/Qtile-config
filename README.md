@@ -16,7 +16,7 @@ makepkg -si
   * Arch based:
 
     ```
-    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi alacritty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock maim xclip xwallpaper fortune-mod
+    yay -S lxsession picom copyq network-manager-applet qtile qtile-extras i3lock-color rofi alacritty nitrogen kitty lxappearance qt5ct nerd-fonts xss-lock flameshot xwallpaper fortune-mod
     ```
   * [Rofi power menu](https://github.com/jluttine/rofi-power-menu)
 
@@ -51,7 +51,7 @@ By defaults, provided that these applications are installed:
 * Super + V toggles CopyQ main window
 * Super + W launches Firefox if installed
 * Super + Shift + S set up screenshot region, I set the default to just copy the screenshot to the clipboard instead of to a file
-  * Alt + Shift + S takes a screenshot of the whole desktop and save it to ~/.cache/screenshot.png because the main screenshot short is wonky when taking the region the size of the screen 
+region the size of the screen 
 * Super + Shift + P launches Rofi Power Menu
 * Super + Minus shrinks the window horizontally
 * Super + Equal expands the window horizontally
@@ -63,7 +63,7 @@ By defaults, provided that these applications are installed:
 
 **Note**: To use the weather widget to its fullest, look to create your own api key and add it in the config file, which already has a line for you to do it: `# app_key="placeholder",`, simply replace the "placeholder" text with your own key and uncomment the line (of course reload Qtile).
 
-For funsies, you can click on the arch glyph on the top left (the first widget on the bar) and you should have a dunst notification that quotes a quote from fortune
+For funsies, you can either click on the Arch glyph on the top left (the first widget on the bar) or hit Super + Backspace and you should have a dunst notification that quotes a quote from fortune
 
 The programs listed are the ones I use and recommends, but if you don't want to use them, simply install the ones you like and change the config file, though you might want to install kitty first, just so it's easier to change the config.
   
@@ -72,7 +72,7 @@ You might want to install xmodmap and/or input-remapper to edit your keyboard ma
 
 You might have to make the autostart file executable: `sudo chmod +x ~/.config/qtile/autostart.sh`
 
-For my other configs, you should check out [this](https://github.com/DNM1008/Other-configs)
+For my full configs, you should check out [this](https://github.com/DNM1008/Dots)
 
 Special thanks to [DT](https://gitlab.com/dwt1), this config file is just his config file but customised a little bit by me.
 [His YouTube Channel](https://www.youtube.com/@DistroTube)
